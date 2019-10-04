@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'localhost:8000/api/services'
+    apiUrl: 'localhost:8000/autosalon/api/services/'
 };
 
 /*
