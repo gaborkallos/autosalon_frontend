@@ -1,0 +1,12 @@
+<div *ngIf="authService.isLoggedIn()">
+  <div class="sidenav">
+    <a routerLink="/cars">Cars</a>
+    <a href="#">Administrators</a>
+    <a href="#">Clients</a>
+  </div>
+  <div class="main">
+    <div *ngIf="isCars">
+      <app-car-list></app-car-list>
+    </div>
+  </div>
+</div>

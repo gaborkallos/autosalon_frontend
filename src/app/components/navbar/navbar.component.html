@@ -1,0 +1,22 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">AutoSalon</a>
+
+    <div *ngIf="authService.isLoggedIn()">
+      <h3 class="navbar-brand">{{ authService.currentUser }}</h3>
+    </div>
+    <div *ngIf="!authService.isLoggedIn()">
+      <h3 class="navbar-brand"> You are not logged in!</h3>
+    </div>
+    <div *ngIf="!authService.isLoggedIn()">
+      <button class="btn btn-primary my-2 my-sm-0 mr-2" routerLink="login" type="button">
+        Login
+      </button>
+    </div>
+    <div *ngIf="authService.isLoggedIn()">
+      <button class="btn btn-primary my-2 my-sm-0 mr-2" (click)="onLogout()" type="button">
+        Logout
+      </button>
+    </div>
+  </div>
+</nav>

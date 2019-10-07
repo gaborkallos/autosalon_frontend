@@ -1,0 +1,56 @@
+<div *ngIf="authService.isLoggedIn()" class="main">
+  <h4>Find Car: </h4>
+  <form [formGroup]="carSearcForm" (ngSubmit)="findCar()">
+    <input formControlName="manufacture" id="manufacture"  placeholder="Manufacture">
+    <input type="submit"><br>
+    <input formControlName="model" id="model"  placeholder="Model">
+    <input type="submit"><br>
+    <input formControlName="year" id="year"  placeholder="Year">
+    <input type="submit"><br>
+
+    <!--    <table>-->
+<!--      <tr>-->
+<!--        <td>-->
+<!--          <input formControlName="manufacture" id="manufacture" placeholder="Manufacture">-->
+<!--        </td>-->
+<!--        <td>-->
+<!--          <input formControlName="model" id="model" placeholder="Model">-->
+<!--        </td>-->
+<!--        <td>-->
+<!--          <input formControlName="year" id="year" placeholder="Year">-->
+<!--        </td>-->
+<!--        <td>-->
+<!--          <input formControlName="model" id="price" placeholder="Price">-->
+<!--        </td>-->
+<!--        <td><input type="submit"></td>-->
+<!--      </tr>-->
+<!--    </table>-->
+  </form>
+  <table class="table">
+  </table>
+  <div class="table-responsive table-bordered table-hover">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Manufacture</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Price</th>
+        <th>Administrator</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let car of cars">
+        <td>{{car.id}}</td>
+        <td>{{car.manufacture}}</td>
+        <td>{{car.model}}</td>
+        <td>{{car.yearOfManufacture}}</td>
+        <td>{{car.price}}</td>
+        <td>{{car.administrator}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="btn btn-primary my-2 my-sm-0 mr-2" routerLink="/" type="button">Back</button>
+</div>
